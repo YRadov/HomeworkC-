@@ -1,6 +1,7 @@
 #include "Point.h"
 #include "Pets.h"
 #include "Counter.h"
+#include "Student.h"
 #include <iostream>
 using namespace std;
 
