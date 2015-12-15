@@ -92,3 +92,36 @@ Counter::~Counter()
 {
 	cout << "Destroying object\n";
 }
+
+//Изменить шаг
+void Counter::ChangeShift(int flag)
+{
+	this->SetShift(flag);
+}
+
+//увеличение на заданный сдвиг
+void Counter::MoveCounter(int change)
+{
+	//чтоб убрать целые обороты счетчика(и умножаем на текущий шаг)
+	change = (change%this->max)*this->shift;
+
+	if ((this->current + change) > this->max)
+	{
+		this->current = (this->current + change) - this->max;
+	}
+	else if (change < 0 && (this->current + change) < 0)
+	{
+		this->current = this->max + ( this->current + change);
+	}
+	else
+	{
+		this->current = this->current + change;
+	}
+}
+
+//обнуление счетчика
+void Counter::ResetCounter()
+{
+	this->current = this->min;
+}
+

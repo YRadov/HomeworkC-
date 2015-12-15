@@ -4,7 +4,10 @@
 #include <iostream>
 using namespace std;
 
+//показ текущего состояния счетчика
 void ShowCounter(Counter a);
+//выполнить выбранное действие со счетчиком
+void Choice(int flag, Counter& a);
 
 void main()
 {
@@ -82,8 +85,8 @@ void main()
 //                   3  ласс Counter
 //*********************************************************************	
 	int temp;	
-	Counter counter1;
-	ShowCounter(counter1);
+	Counter counter;
+	ShowCounter(counter);
 	cout << "-------------------------------\n";
 	//test constructors(all is ok:) )
 	//Counter counter2(2,99999,8,2);
@@ -102,26 +105,65 @@ void main()
 	cout << "Enter parametrs:\n";
 	cout << "Min: ";
 	cin >> temp;
-	counter1.SetMin(temp);
+	counter.SetMin(temp);
 	cout << "Max: ";
 	cin >> temp;
-	counter1.SetMax(temp);
+	counter.SetMax(temp);
 	cout << "Current: ";
 	cin >> temp;
-	counter1.SetCurrent(temp);
+	counter.SetCurrent(temp);
 	cout << "Shift: ";
 	cin >> temp;
-	counter1.SetShift(temp);
-	cout << "\nNew state of the counter:\n";
-	ShowCounter(counter1);
-
+	counter.SetShift(temp);
+	ShowCounter(counter);
+	cout << "-------------------------------\n";
+	int flag = 1;
+	while (flag)
+	{
+		cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
+		cout << "3 - Reset counter\n4 - Exit from this action\n";
+		cin >> flag;
+		if (flag != 4)
+		{
+			Choice(flag, counter);
+			ShowCounter(counter);
+		}
+		else
+			flag = 0;
+	}
 }//main
-
+//***************************************************
 void ShowCounter(Counter a)
 {
-	cout << "Carrent counter:\n"
+	cout << "\n**********************************\n";
+	cout << "\nNew state of the counter:\n"
 		<< "min: "    << a.GetMin()     << endl
 		<< "carrent:" << a.GetCurrent() << endl
 		<< "max: "    << a.GetMax()     << endl
 		<< "shift: "  << a.GetShift()   << endl;
+	cout << "\n**********************************\n";
+
+}
+//***************************************************
+void Choice(int flag, Counter& a)
+{
+	switch (flag)
+	{
+	case 1://изменить шаг
+		cout << "Enter new shift: ";
+		cin >> flag;
+		a.ChangeShift(flag);
+		break;
+	case 2://сдвинуть счетчик
+		cout << "Enter the shift value('+' - forward, '-' - back): ";
+		cin >> flag;
+		a.MoveCounter(flag);
+		break;
+	case 3://сбросить на ноль
+		a.ResetCounter();
+		break;
+	default:
+		cout << "Incorrect data! Try again.\n\n";
+		break;
+	}
 }
