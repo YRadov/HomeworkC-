@@ -142,9 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Counter.cpp" />
     <ClCompile Include="Homework1.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Counter.h" />
     <ClInclude Include="Pets.h" />
     <ClInclude Include="Point.h" />
   </ItemGroup>
