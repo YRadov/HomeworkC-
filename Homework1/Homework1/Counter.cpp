@@ -93,16 +93,16 @@ Counter::~Counter()
 	cout << "Destroying object\n";
 }
 
-//Èçìåíèòü øàã
+//Â»Ğ·Ğ¼ĞµĞ½Ğ¸Ñ‚ÑŒ ÑˆĞ°Ğ³
 void Counter::ChangeShift(int flag)
 {
 	this->SetShift(flag);
 }
 
-//óâåëè÷åíèå íà çàäàííûé ñäâèã
+//ÑƒĞ²ĞµĞ»Ğ¸Ñ‡ĞµĞ½Ğ¸Ğµ Ğ½Ğ° Ğ·Ğ°Ğ´Ğ°Ğ½Ğ½Ñ‹Ğ¹ ÑĞ´Ğ²Ğ¸Ğ³
 void Counter::MoveCounter(int change)
 {
-	//÷òîá óáğàòü öåëûå îáîğîòû ñ÷åò÷èêà(è óìíîæàåì íà òåêóùèé øàã)
+	//Ñ‡Ñ‚Ğ¾Ğ± ÑƒĞ±Ñ€Ğ°Ñ‚ÑŒ Ñ†ĞµĞ»Ñ‹Ğµ Ğ¾Ğ±Ğ¾Ñ€Ğ¾Ñ‚Ñ‹ ÑÑ‡ĞµÑ‚Ñ‡Ğ¸ĞºĞ°(Ğ¸ ÑƒĞ¼Ğ½Ğ¾Ğ¶Ğ°ĞµĞ¼ Ğ½Ğ° Ñ‚ĞµĞºÑƒÑ‰Ğ¸Ğ¹ ÑˆĞ°Ğ³)
 	change = (change%this->max)*this->shift;
 
 	if ((this->current + change) > this->max)
@@ -119,7 +119,7 @@ void Counter::MoveCounter(int change)
 	}
 }
 
-//îáíóëåíèå ñ÷åò÷èêà
+//Ğ¾Ğ±Ğ½ÑƒĞ»ĞµĞ½Ğ¸Ğµ ÑÑ‡ĞµÑ‚Ñ‡Ğ¸ĞºĞ°
 void Counter::ResetCounter()
 {
 	this->current = this->min;
