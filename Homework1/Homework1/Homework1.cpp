@@ -13,7 +13,7 @@ void Choice(int flag, Counter& a);
 void main()
 {
 //*********************************************************************	
-//                   1  ласс Point
+//                   1  Класс Point
 //*********************************************************************	
 //	cout << "---------TASK 1----------------\n";
 //	int x, y;
@@ -62,7 +62,7 @@ void main()
 //
 //
 ////*********************************************************************	
-////                   2  ласс Pets
+////                   2  Класс Pets
 ////*********************************************************************	
 //	cout << "---------TASK 2----------------\n";
 //	Pets pet1(DOG,"Viva",4,false, LONG);
@@ -83,7 +83,7 @@ void main()
 //
 //
 //*********************************************************************	
-//                   3  ласс Counter
+//                   3  Класс Counter
 //*********************************************************************	
 	int temp;	
 	Counter counter;
@@ -103,35 +103,40 @@ void main()
 	//ShowCounter(counter5);
 	//cout << "-------------------------------\n";
 
-	cout << "Enter parametrs:\n";
-	cout << "Min: ";
-	cin >> temp;
-	counter.SetMin(temp);
-	cout << "Max: ";
-	cin >> temp;
-	counter.SetMax(temp);
-	cout << "Current: ";
-	cin >> temp;
-	counter.SetCurrent(temp);
-	cout << "Shift: ";
-	cin >> temp;
-	counter.SetShift(temp);
-	ShowCounter(counter);
-	cout << "-------------------------------\n";
-	int flag = 1;
-	while (flag)
-	{
-		cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
-		cout << "3 - Reset counter\n4 - Exit from this action\n";
-		cin >> flag;
-		if (flag != 4)
-		{
-			Choice(flag, counter);
-			ShowCounter(counter);
-		}
-		else
-			flag = 0;
-	}
+	//cout << "Enter parametrs:\n";
+	//cout << "Min: ";
+	//cin >> temp;
+	//counter.SetMin(temp);
+	//cout << "Max: ";
+	//cin >> temp;
+	//counter.SetMax(temp);
+	//cout << "Current: ";
+	//cin >> temp;
+	//counter.SetCurrent(temp);
+	//cout << "Shift: ";
+	//cin >> temp;
+	//counter.SetShift(temp);
+	//ShowCounter(counter);
+	//cout << "-------------------------------\n";
+	//int flag = 1;
+	//while (flag)
+	//{
+	//	cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
+	//	cout << "3 - Reset counter\n4 - Exit from this action\n";
+	//	cin >> flag;
+	//	if (flag != 4)
+	//	{
+	//		Choice(flag, counter);
+	//		ShowCounter(counter);
+	//	}
+	//	else
+	//		flag = 0;
+	//}
+
+	cout << counter.point.GetX() << endl;
+	counter.point.SetX(10);
+	cout << counter.point.GetX() << endl;
+
 }//main
 //***************************************************
 void ShowCounter(Counter a)
