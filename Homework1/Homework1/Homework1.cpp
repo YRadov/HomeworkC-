@@ -146,11 +146,12 @@ void main()
 //                   4  Класс Student
 //*********************************************************************	
 	Student student;
-	cout << "\nNew state of the counter:\n"
-		<< "City: " << student.adress.GetCity() << endl
-		<< "Street:" << student.adress.GetStreet() << endl
-		<< "House: " << student.adress.GetHouse() << endl
-		<< "Room: " << student.adress.GetRoom() << endl;
+	cout << "Current student's room number is "<<student.adress.GetRoom()<<endl;
+	//cout << "\nNew state of the counter:\n"
+	//	<< "City: " << student.adress.GetCity() << endl
+	//	<< "Street:" << student.adress.GetStreet() << endl
+	//	<< "House: " << student.adress.GetHouse() << endl
+	//	<< "Room: " << student.adress.GetRoom() << endl;
 
 	//ShowAdress(student);
 
@@ -193,19 +194,19 @@ void Choice(int flag, Counter& a)
 //***************************************************
 void ShowAdress(Student& stud)
 {
-	cout << "\n**********************************\n";
-	if (stud.adress.GetCity())
-	{
-		cout << "\nNew state of the counter:\n"
-			<< "City: " << stud.adress.GetCity() << endl
-			<< "Street:" << stud.adress.GetStreet() << endl
-			<< "House: " << stud.adress.GetHouse() << endl
-			<< "Room: " << stud.adress.GetRoom() << endl;
-	}
-	else
-	{
-		cout << "Address is not set";
-	}
-	cout << "\n**********************************\n";
+	//cout << "\n**********************************\n";
+	//if (stud.adress.GetCity())
+	//{
+	//	cout << "\nNew state of the counter:\n"
+	//		<< "City: " << stud.adress.GetCity() << endl
+	//		<< "Street:" << stud.adress.GetStreet() << endl
+	//		<< "House: " << stud.adress.GetHouse() << endl
+	//		<< "Room: " << stud.adress.GetRoom() << endl;
+	//}
+	//else
+	//{
+	//	cout << "Address is not set";
+	//}
+	//cout << "\n**********************************\n";
 
 }

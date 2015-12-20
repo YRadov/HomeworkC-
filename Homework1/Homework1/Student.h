@@ -2,16 +2,16 @@
 #include "Adress.h"
 class Student
 {
-	int name = 0;
-	int middle_name=0;
-	int last_name=0;
-	int birthday=0;
-	int phone=0;
+	int name;
+	int middle_name;
+	int last_name;
+	int birthday;
+	int phone;
 
 public:
 	Adress adress;
 
-	Student();
+	Student() :name(0), middle_name(0), last_name(0), birthday(0), phone(0){};
 	~Student();
 };
 
