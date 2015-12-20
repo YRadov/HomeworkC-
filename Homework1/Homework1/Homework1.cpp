@@ -9,6 +9,8 @@ using namespace std;
 void ShowCounter(Counter a);
 //выполнить выбранное действие со счетчиком
 void Choice(int flag, Counter& a);
+//показ адреса студента
+void ShowAdress(Student& stud);
 
 void main()
 {
@@ -118,24 +120,39 @@ void main()
 	//counter.SetShift(temp);
 	//ShowCounter(counter);
 	//cout << "-------------------------------\n";
-	//int flag = 1;
-	//while (flag)
-	//{
-	//	cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
-	//	cout << "3 - Reset counter\n4 - Exit from this action\n";
-	//	cin >> flag;
-	//	if (flag != 4)
-	//	{
-	//		Choice(flag, counter);
-	//		ShowCounter(counter);
-	//	}
-	//	else
-	//		flag = 0;
-	//}
+	int flag = 1;
+	while (flag)
+	{
+		cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
+		cout << "3 - Reset counter\n4 - Exit from this action\n";
+		cin >> flag;
+		if (flag != 4)
+		{
+			Choice(flag, counter);
+			ShowCounter(counter);
+		}
+		else
+			flag = 0;
+	}
+	cout << "-------------------------------\n";
+	cout << "-------------------------------\n";
 
-	cout << counter.point.GetX() << endl;
-	counter.point.SetX(10);
-	cout << counter.point.GetX() << endl;
+
+	//cout << counter.point.GetX() << endl;
+	//counter.point.SetX(10);
+	//cout << counter.point.GetX() << endl;
+
+//*********************************************************************	
+//                   4  Класс Student
+//*********************************************************************	
+	Student student;
+	cout << "\nNew state of the counter:\n"
+		<< "City: " << student.adress.GetCity() << endl
+		<< "Street:" << student.adress.GetStreet() << endl
+		<< "House: " << student.adress.GetHouse() << endl
+		<< "Room: " << student.adress.GetRoom() << endl;
+
+	//ShowAdress(student);
 
 }//main
 //***************************************************
@@ -172,4 +189,23 @@ void Choice(int flag, Counter& a)
 		cout << "Incorrect data! Try again.\n\n";
 		break;
 	}
+}
+//***************************************************
+void ShowAdress(Student& stud)
+{
+	cout << "\n**********************************\n";
+	if (stud.adress.GetCity())
+	{
+		cout << "\nNew state of the counter:\n"
+			<< "City: " << stud.adress.GetCity() << endl
+			<< "Street:" << stud.adress.GetStreet() << endl
+			<< "House: " << stud.adress.GetHouse() << endl
+			<< "Room: " << stud.adress.GetRoom() << endl;
+	}
+	else
+	{
+		cout << "Address is not set";
+	}
+	cout << "\n**********************************\n";
+
 }

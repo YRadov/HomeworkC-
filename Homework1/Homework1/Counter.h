@@ -9,8 +9,6 @@ class Counter
 
 public:
 
-	Point point;
-
 	void SetMin(int min);
 	void SetMax(int max);
 	void SetCurrent(int current);
@@ -21,7 +19,7 @@ public:
 	int GetCurrent();
 	int GetShift();
 
-	Counter() : min(0), max(99999), current(0), shift(1), point() {};
+	Counter() : min(0), max(99999), current(0), shift(1) {};
 
 	Counter(int min, int max, int current, int shift);
 
