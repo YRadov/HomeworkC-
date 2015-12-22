@@ -65,11 +65,11 @@ Adress Student::GetAdress()
 	return copy;
 }
 
-Student::Student(char* name, char* last_name)
+Student::Student(char* name, char* last_name, int phone)
 {
 	SetName(name);
 	SetLastName(last_name);
-	SetPhone(0);
+	SetPhone(phone);
 }
 
 Student::Student(char* name, char* last_name, int phone, Adress adress)

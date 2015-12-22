@@ -24,7 +24,7 @@ public:
 
 	Student() :name(nullptr), last_name(nullptr), phone(0) {};
 	Student(char* name, char* last_name, int phone,Adress adress);
-	Student(char* name, char* last_name);
+	Student(char* name, char* last_name, int phone);
 
 	//конструктор копирования
 	Student(const Student & original):Student(original.name, original.last_name, original.phone, original.adress) {};
