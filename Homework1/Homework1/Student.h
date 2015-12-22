@@ -5,7 +5,7 @@ class Student
 	char* name;
 	char* last_name;
 	int phone;
-	//Adress adress;
+	Adress adress;
 	//+3 динам массива(зачеты, курсовые, экзамены)
 
 
@@ -20,14 +20,14 @@ public:
 	char* GetName()const;
 	char* GetLastName()const;
 	int   GetPhone()const;
-	Adress* GetAdress()const;
+	Adress GetAdress();
 
 	Student() :name(nullptr), last_name(nullptr), phone(0) {};
-
+	Student(char* name, char* last_name, int phone,Adress adress);
 	Student(char* name, char* last_name);
 
 	//конструктор копирования
-
+	Student(const Student & original):Student(original.name, original.last_name, original.phone, original.adress) {};
 	~Student();
 };
 

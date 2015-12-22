@@ -145,13 +145,13 @@ void main()
 //*********************************************************************	
 //                   4  Класс Student
 //*********************************************************************	
-	Student student;
+	//Student student;
 
-	student.SetName("Yurii");
-	student.SetLastName("Radov");
-	cout << student.GetLastName() << endl;
-	cout << student.GetName() << endl;
-	student.SetAdress("Odessa", "Vysotzky", 3, 21);
+	//student.SetName("Yurii");
+	//student.SetLastName("Radov");
+	//cout << student.GetLastName() << endl;
+	//cout << student.GetName() << endl;
+	//student.SetAdress("Odessa", "Vysotzky", 3, 21);
 	//cout << student.GetAdress().GetCity()<<endl;
 	//cout << student.GetAdress().GetStreet() << endl;
 	//cout << student.GetAdress().GetHouse() << endl;
@@ -163,8 +163,14 @@ void main()
 	cout << adress.GetHouse() << endl;
 	cout<<adress.GetRoom()<<endl;
 	cout << "\n********************************************\n";
-	Student student2("Yurii", "Radov");
-	cout << "My name is " << student2.GetName() << endl;
+	Adress adress2 = adress;
+	adress2.SetCity("Alchevsk");
+	cout << adress2.GetCity() << endl;
+	cout << adress2.GetStreet() << endl;
+	cout << adress2.GetHouse() << endl;
+	cout << adress2.GetRoom() << endl;
+	//Student student2("Yurii", "Radov");
+	//cout << "My name is " << student2.GetName() << endl;
 
 	//ShowAdress(student);
 

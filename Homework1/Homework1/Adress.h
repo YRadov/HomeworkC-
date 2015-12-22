@@ -20,6 +20,8 @@ public:
 
 	Adress() :city(nullptr), street(nullptr), house(0), room(0){};
 	Adress(char* city, char* street, int house,	int room);
+
+	Adress(const Adress & original):Adress(original.city, original.street, original.house, original.room) {};
 	~Adress();
 };
 

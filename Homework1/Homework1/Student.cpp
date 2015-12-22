@@ -34,10 +34,10 @@ void Student::SetPhone(int phone)
 }
 void Student::SetAdress(char* city, char* street, int house, int room)
 {
-	//this->adress.SetCity(city);
-	//this->adress.SetStreet(street);
-	//this->adress.SetHouse(house);
-	//this->adress.SetRoom(room);
+	this->adress.SetCity(city);
+	this->adress.SetStreet(street);
+	this->adress.SetHouse(house);
+	this->adress.SetRoom(room);
 }
 
 
@@ -59,9 +59,9 @@ int   Student::GetPhone()const
 {
 	return this->phone;
 }
-Adress* Student::GetAdress()const
+Adress Student::GetAdress()
 {
-	Adress* copy;// = this->adress;
+	Adress copy = this->adress;
 	return copy;
 }
 
@@ -72,6 +72,13 @@ Student::Student(char* name, char* last_name)
 	SetPhone(0);
 }
 
+Student::Student(char* name, char* last_name, int phone, Adress adress)
+{
+	SetName(name);
+	SetLastName(last_name);
+	SetPhone(phone);
+	SetAdress(adress.GetCity(), adress.GetStreet(), adress.GetHouse(), adress.GetRoom() );
+}
 
 Student::~Student()
 {
