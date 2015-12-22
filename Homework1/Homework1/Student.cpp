@@ -65,11 +65,15 @@ Adress Student::GetAdress()
 	return copy;
 }
 
-Student::Student(char* name, char* last_name, int phone)
+Student::Student(char* name, char* last_name)
 {
 	SetName(name);
 	SetLastName(last_name);
-	SetPhone(phone);
+	SetPhone(0);
+	adress.SetCity(nullptr);
+	adress.SetStreet(nullptr);
+	adress.SetHouse(0);
+	adress.SetRoom(0);
 }
 
 Student::Student(char* name, char* last_name, int phone, Adress adress)
@@ -82,11 +86,12 @@ Student::Student(char* name, char* last_name, int phone, Adress adress)
 
 Student::~Student()
 {
+	cout << "The student "<< this->last_name <<" died... ";
+
 	delete[]this->last_name;
 	this->last_name = nullptr;
 
 	delete[]this->name;
 	this->name = nullptr;
 
-	cout << "The student died... ";
 }

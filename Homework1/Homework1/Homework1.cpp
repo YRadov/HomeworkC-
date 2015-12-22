@@ -147,36 +147,55 @@ void main()
 //*********************************************************************	
 	Student student;
 	//cout << "Not initialized student:\n";
-	//ShowAdress(student);//так валится прога????????????????????????
+	//ShowAdress(student);//валится прога????????????????????????
 	cout << "\n********************************************\n";
+
 	student.SetName("Yurii");
 	student.SetLastName("Radov");
-	cout << student.GetLastName() << endl;
-	cout << student.GetName() << endl;
+	student.SetPhone(775566);
 	student.SetAdress("Odessa", "Vysotzky", 3, 21);
-	cout << "Initialized student:\n";
+	cout << "Initialized student:\n"<<"-------------------\n";
 	ShowAdress(student);
 	cout << "\n********************************************\n";
 	/**
 	*Проверка класса Adress
 	*/
-	////Adress adress;// валится прога??????????????????????????????????????
+	//Adress adress;// валится прога??????????????????????????????????????
 	//Adress adress("Odessa", "Vysotzky", 3, 21);
 	//cout << adress.GetCity() << endl;
 	//cout << adress.GetStreet() << endl;
 	//cout << adress.GetHouse() << endl;
 	//cout<<adress.GetRoom()<<endl;
 	cout << "\n********************************************\n";
+
 	student.SetName("Kostya");
 	student.SetLastName("Tymko");
-	cout << student.GetLastName() << endl;
-	cout << student.GetName() << endl;
+	student.SetPhone(332244);
 	student.SetAdress("Odessa", "Lenina", 1, 22);
-	cout << "The student with the changed data:\n";
+	cout << "The student with the changed data:\n" << "----------------------------------\n";
 	ShowAdress(student);
+	cout << "\n********************************************\n";
+	//char*name = "Ivan";
+	//char*lastname = "Ivanov";
+	//Student student2(name, lastname);//валится прога????????????????????
+	//cout << student2.GetLastName() << endl;
+	//cout << student2.GetName() << endl;
+	cout << "\n********************************************\n";
+
+	//Student student3 = student;//валится прога???????
+	Student student3;
+	student3.SetName("Ivan");
+	student3.SetLastName("Ivanov");
+	student3.SetPhone(111111);
+	student3.SetAdress("Odessa", "Levitana", 1, 22);
+	cout << "The new student:\n" << "----------------------------------\n";
+	//ShowAdress(student3);//валится прога???????
 
 }//main
 //***************************************************
+//***************************************************
+//***************************************************
+
 void ShowCounter(Counter a)
 {
 	cout << "\n**********************************\n";
@@ -215,18 +234,13 @@ void Choice(int flag, Counter& a)
 void ShowAdress(Student& stud)
 {
 	//cout << "\n**********************************\n";
-	if (stud.GetAdress().GetRoom())
-	{
+		cout << stud.GetLastName() << " ";
+		cout << stud.GetName() << endl;
+		cout << "Phone nomber: "<< stud.GetPhone() << endl;
 		cout << "City: " << stud.GetAdress().GetCity() << endl
-			<< "Street:" << stud.GetAdress().GetStreet() << endl
+			<< "Street: " << stud.GetAdress().GetStreet() << endl
 			<< "House: " << stud.GetAdress().GetHouse() << endl
 			<< "Room: " << stud.GetAdress().GetRoom() << endl;
-	}
-	else
-	{
-		cout << "Address is not set";
-		return;
-	}
 	//cout << "\n**********************************\n";
 
 }

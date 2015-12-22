@@ -47,7 +47,7 @@ void Adress::SetRoom(int room)
 
 }
 
-char* Adress::GetCity() const
+char* Adress::GetCity() 
 {
 	int length = strlen(this->city) + 1;
 	char* copy = new char[length];
@@ -55,7 +55,7 @@ char* Adress::GetCity() const
 	return copy;
 }
 
-char* Adress::GetStreet() const
+char* Adress::GetStreet() 
 {
 	int length = strlen(this->street) + 1;
 	char* copy = new char[length];
@@ -84,11 +84,12 @@ Adress::Adress(char* city, char* street, int house, int room)
 
 Adress::~Adress()
 {
+	cout << "\nAdress in "<< this->street <<" is destroyed!!!\n";
+
 	delete[]this->city;
 		this->city = nullptr;
 	delete[]this->street;
 		this->street = nullptr;
-		//cout << "\nAdress is destroyed!!!\n";
 }
 
 

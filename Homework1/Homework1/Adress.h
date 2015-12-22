@@ -13,8 +13,8 @@ public:
 	void SetHouse(int house);
 	void SetRoom(int room);
 
-	char* GetCity() const;
-	char* GetStreet() const;
+	char* GetCity();
+	char* GetStreet();
 	int   GetHouse();
 	int   GetRoom();
 
