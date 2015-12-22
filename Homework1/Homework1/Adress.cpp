@@ -88,6 +88,7 @@ Adress::~Adress()
 		this->city = nullptr;
 	delete[]this->street;
 		this->street = nullptr;
+		cout << "\nAdress is destroyed!!!\n";
 }
 
 

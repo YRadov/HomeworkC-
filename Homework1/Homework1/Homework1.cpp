@@ -87,10 +87,10 @@ void main()
 //*********************************************************************	
 //                   3  Класс Counter
 //*********************************************************************	
-	int temp;	
-	Counter counter;
-	ShowCounter(counter);
-	cout << "-------------------------------\n";
+	//int temp;	
+	//Counter counter;
+	//ShowCounter(counter);
+	//cout << "-------------------------------\n";
 	//test constructors(all is ok:) )
 	//Counter counter2(2,99999,8,2);
 	//ShowCounter(counter2);
@@ -120,22 +120,22 @@ void main()
 	//counter.SetShift(temp);
 	//ShowCounter(counter);
 	//cout << "-------------------------------\n";
-	int flag = 1;
-	while (flag)
-	{
-		cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
-		cout << "3 - Reset counter\n4 - Exit from this action\n";
-		cin >> flag;
-		if (flag != 4)
-		{
-			Choice(flag, counter);
-			ShowCounter(counter);
-		}
-		else
-			flag = 0;
-	}
-	cout << "-------------------------------\n";
-	cout << "-------------------------------\n";
+	//int flag = 1;
+	//while (flag)
+	//{
+	//	cout << "\nSelect the action:\n1 - Change shift\n2 - Move counter\n";
+	//	cout << "3 - Reset counter\n4 - Exit from this action\n";
+	//	cin >> flag;
+	//	if (flag != 4)
+	//	{
+	//		Choice(flag, counter);
+	//		ShowCounter(counter);
+	//	}
+	//	else
+	//		flag = 0;
+	//}
+	//cout << "-------------------------------\n";
+	//cout << "-------------------------------\n";
 
 
 	//cout << counter.point.GetX() << endl;
@@ -146,12 +146,25 @@ void main()
 //                   4  Класс Student
 //*********************************************************************	
 	Student student;
-	cout << "Current student's room number is "<<student.adress.GetRoom()<<endl;
-	//cout << "\nNew state of the counter:\n"
-	//	<< "City: " << student.adress.GetCity() << endl
-	//	<< "Street:" << student.adress.GetStreet() << endl
-	//	<< "House: " << student.adress.GetHouse() << endl
-	//	<< "Room: " << student.adress.GetRoom() << endl;
+
+	student.SetName("Yurii");
+	student.SetLastName("Radov");
+	cout << student.GetLastName() << endl;
+	cout << student.GetName() << endl;
+	student.SetAdress("Odessa", "Vysotzky", 3, 21);
+	//cout << student.GetAdress().GetCity()<<endl;
+	//cout << student.GetAdress().GetStreet() << endl;
+	//cout << student.GetAdress().GetHouse() << endl;
+	//cout << student.GetAdress().GetRoom()<<endl;
+	cout << "\n********************************************\n";
+	Adress adress("Odessa", "Vysotzky", 3, 21);
+	cout << adress.GetCity() << endl;
+	cout << adress.GetStreet() << endl;
+	cout << adress.GetHouse() << endl;
+	cout<<adress.GetRoom()<<endl;
+	cout << "\n********************************************\n";
+	Student student2("Yurii", "Radov");
+	cout << "My name is " << student2.GetName() << endl;
 
 	//ShowAdress(student);
 

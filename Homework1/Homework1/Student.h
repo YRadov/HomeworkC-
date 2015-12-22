@@ -2,16 +2,32 @@
 #include "Adress.h"
 class Student
 {
-	int name;
-	int middle_name;
-	int last_name;
-	int birthday;
+	char* name;
+	char* last_name;
 	int phone;
+	//Adress adress;
+	//+3 динам массива(зачеты, курсовые, экзамены)
+
 
 public:
-	Adress adress;
 
-	Student() :name(0), middle_name(0), last_name(0), birthday(0), phone(0){};
+	void SetName(char* name);
+	void SetLastName(char* last_name);
+	void SetPhone(int phone);
+	void SetAdress(char* city, char* street, int house, int room);
+
+
+	char* GetName()const;
+	char* GetLastName()const;
+	int   GetPhone()const;
+	Adress* GetAdress()const;
+
+	Student() :name(nullptr), last_name(nullptr), phone(0) {};
+
+	Student(char* name, char* last_name);
+
+	//конструктор копирования
+
 	~Student();
 };
 
