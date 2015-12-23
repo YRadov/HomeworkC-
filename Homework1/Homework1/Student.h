@@ -23,6 +23,7 @@ public:
 	int   GetPhone()const;
 	Adress GetAdress();
 
+	//Student();
 	Student():name(nullptr), last_name(nullptr), phone(0) {};
 	Student(char* name, char* last_name, int phone,Adress adress);
 	Student(char* name, char* last_name);

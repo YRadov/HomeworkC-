@@ -82,14 +82,6 @@ int   Student::GetPhone()const
 	return this->phone;
 }
 
-void Student::ShowExams()
-{
-	cout << "Marks for exams:\n";
-	for (int i = 0; i < this->size; i++)
-	{
-		cout <<i+1 << ") " << *((this->exams)+i)<<endl;
-	}
-}
 Adress Student::GetAdress()
 {
 	Adress copy = this->adress;
@@ -135,4 +127,13 @@ Student::~Student()
 	delete[]this->exams;
 	this->exams = nullptr;
 
+}
+
+void Student::ShowExams()
+{
+	cout <<this->GetLastName()<< "'s marks for exams:\n";
+	for (int i = 0; i < this->size; i++)
+	{
+		cout << i + 1 << ") " << *((this->exams) + i) << endl;
+	}
 }
