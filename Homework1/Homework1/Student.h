@@ -5,15 +5,16 @@ class Student
 	char* name;
 	char* last_name;
 	int phone;
+	int* exams = new int[0];
+	int size = 0;
 	Adress adress;
-	//+3 динам массива(зачеты, курсовые, экзамены)
-
 
 public:
 
 	void SetName(char* name);
 	void SetLastName(char* last_name);
 	void SetPhone(int phone);
+	void SetExams(int mark);
 	void SetAdress(char* city, char* street, int house, int room);
 
 
@@ -29,5 +30,8 @@ public:
 	//конструктор копирования
 	Student(const Student & original):Student(original.name, original.last_name, original.phone, original.adress) {};
 	~Student();
+
+	void  ShowExams();
+
 };
 

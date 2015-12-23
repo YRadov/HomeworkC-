@@ -1,5 +1,7 @@
 #include "Student.h"
 #include <iostream>
+#include <string.h>
+
 using namespace std;
 
 void Student::SetName(char* name)
@@ -32,6 +34,21 @@ void Student::SetPhone(int phone)
 {
 	this->phone = phone;
 }
+void Student::SetExams(int mark)
+{
+	this->size++;
+	//cout << this->size << endl;
+	int* temp = new int[this->size];
+	for (int i = 0; i < this->size; i++)
+	{
+		temp[i] = this->exams[i];
+	}
+
+	temp[this->size - 1] = mark;
+	delete[]this->exams;
+	this->exams = temp;
+	temp = nullptr;
+}
 void Student::SetAdress(char* city, char* street, int house, int room)
 {
 	this->adress.SetCity(city);
@@ -58,6 +75,15 @@ char* Student::GetLastName()const
 int   Student::GetPhone()const
 {
 	return this->phone;
+}
+
+void Student::ShowExams()
+{
+	cout << "Marks for exams:\n";
+	for (int i = 0; i < this->size; i++)
+	{
+		cout <<i+1 << ") " << *((this->exams)+i)<<endl;
+	}
 }
 Adress Student::GetAdress()
 {

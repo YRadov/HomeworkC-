@@ -190,6 +190,13 @@ void main()
 	student3.SetAdress("Odessa", "Levitana", 1, 22);
 	cout << "The new student:\n" << "----------------------------------\n";
 	//ShowAdress(student3);//валится прога???????
+	
+	//оценки за экзамены
+	student.SetExams(5);
+	student.SetExams(4);
+	student.SetExams(5);
+	student.ShowExams();
+
 
 }//main
 //***************************************************
