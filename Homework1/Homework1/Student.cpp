@@ -37,6 +37,11 @@ void Student::SetPhone(int phone)
 void Student::SetExams(int mark)
 {
 	this->size++;
+
+	if (!this->exams)
+	{
+		this->exams = new int[this->size];
+	}
 	//cout << this->size << endl;
 	int* temp = new int[this->size];
 	for (int i = 0; i < this->size; i++)
@@ -91,15 +96,19 @@ Adress Student::GetAdress()
 	return copy;
 }
 
+//Student::Student()
+//{
+//	SetName("Ivan");
+//	SetLastName("Ivanov");
+//	SetPhone(0);
+//}
+
 Student::Student(char* name, char* last_name)
 {
 	SetName(name);
 	SetLastName(last_name);
 	SetPhone(0);
-	adress.SetCity(nullptr);
-	adress.SetStreet(nullptr);
-	adress.SetHouse(0);
-	adress.SetRoom(0);
+	SetAdress("not set","not set",0,0);
 }
 
 Student::Student(char* name, char* last_name, int phone, Adress adress)
@@ -112,12 +121,18 @@ Student::Student(char* name, char* last_name, int phone, Adress adress)
 
 Student::~Student()
 {
-	cout << "The student "<< this->last_name <<" died... ";
+	if (this->last_name)
+	{
+		cout << "The student " << this->last_name << " died... ";
+	}
 
 	delete[]this->last_name;
 	this->last_name = nullptr;
 
 	delete[]this->name;
 	this->name = nullptr;
+
+	delete[]this->exams;
+	this->exams = nullptr;
 
 }

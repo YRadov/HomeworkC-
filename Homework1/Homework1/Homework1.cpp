@@ -166,10 +166,10 @@ void main()
 	//cout << adress.GetStreet() << endl;
 	//cout << adress.GetHouse() << endl;
 	//cout<<adress.GetRoom()<<endl;
-	cout << "\n********************************************\n";
+	//cout << "\n********************************************\n";
 
-	student.SetName("Kostya");
-	student.SetLastName("Tymko");
+	student.SetName("Petr");
+	student.SetLastName("Petrov");
 	student.SetPhone(332244);
 	student.SetAdress("Odessa", "Lenina", 1, 22);
 	cout << "The student with the changed data:\n" << "----------------------------------\n";
@@ -189,7 +189,7 @@ void main()
 	student3.SetPhone(111111);
 	student3.SetAdress("Odessa", "Levitana", 1, 22);
 	cout << "The new student:\n" << "----------------------------------\n";
-	//ShowAdress(student3);//валится прога???????
+	ShowAdress(student3);//валится прога???????
 	
 	//оценки за экзамены
 	student.SetExams(5);

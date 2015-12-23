@@ -5,7 +5,7 @@ class Student
 	char* name;
 	char* last_name;
 	int phone;
-	int* exams = new int[0];
+	int* exams = nullptr;//new int[0];
 	int size = 0;
 	Adress adress;
 
@@ -23,7 +23,7 @@ public:
 	int   GetPhone()const;
 	Adress GetAdress();
 
-	Student() :name(nullptr), last_name(nullptr), phone(0) {};
+	Student():name(nullptr), last_name(nullptr), phone(0) {};
 	Student(char* name, char* last_name, int phone,Adress adress);
 	Student(char* name, char* last_name);
 

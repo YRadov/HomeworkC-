@@ -18,9 +18,9 @@ public:
 	int   GetHouse();
 	int   GetRoom();
 
-	Adress() :city(nullptr), street(nullptr), house(0), room(0){};
-	//Adress() :city("not set"), street("not set"), house(0), room(0) {};//-данные выводятся и валится прога???
-
+	//Adress() :city(nullptr), street(nullptr), house(0), room(0){};
+	Adress();
+	
 	Adress(char* city, char* street, int house,	int room);
 
 	Adress(const Adress & original):Adress(original.city, original.street, original.house, original.room) {};

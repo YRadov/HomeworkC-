@@ -32,7 +32,7 @@ void Adress::SetStreet(char* street)
 
 void Adress::SetHouse(int house)
 {
-	if (house > 0)
+	if (house >= 0)
 	{
 		this->house = house;
 	}
@@ -40,7 +40,7 @@ void Adress::SetHouse(int house)
 
 void Adress::SetRoom(int room)
 {
-	if (room > 0)
+	if (room >= 0)
 	{
 		this->room = room;
 	}
@@ -73,6 +73,13 @@ int Adress::GetRoom()
 	return this->room;
 }
 
+Adress::Adress()
+{
+	SetCity("not set");
+	SetStreet("not set");
+	SetHouse(0);
+	SetRoom(0);
+}
 
 Adress::Adress(char* city, char* street, int house, int room)
 {
@@ -84,7 +91,7 @@ Adress::Adress(char* city, char* street, int house, int room)
 
 Adress::~Adress()
 {
-	cout << "\nAdress in "<< this->street <<" is destroyed!!!\n";
+	//cout << "\nAdress in "<< this->street <<" is destroyed!!!\n";
 
 	delete[]this->city;
 		this->city = nullptr;
