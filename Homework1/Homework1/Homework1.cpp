@@ -240,7 +240,12 @@ void ShowAdress(Student& stud)
 	//cout << "\n**********************************\n";
 		cout <<"LastName: "<< stud.GetLastName() << endl;
 		cout << "Name: " << stud.GetName() << endl;
+		if(stud.GetPhone())
+			cout << "Phone nomber: " << stud.GetPhone() << endl;
+		else
+			cout << "Phone nomber: not set " << endl;
 		cout << "Phone nomber: "<< stud.GetPhone() << endl;
+
 		cout << "City: " << stud.GetAdress().GetCity() << endl
 			<< "Street: " << stud.GetAdress().GetStreet() << endl
 			<< "House: " << stud.GetAdress().GetHouse() << endl

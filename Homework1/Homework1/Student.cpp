@@ -93,7 +93,7 @@ Student::Student()
 	SetName("not set");
 	SetLastName("not set");
 	SetPhone(0);
-	SetAdress("not set", "not set", 0, 0);
+	//SetAdress("not set", "not set", 0, 0);
 }
 
 Student::Student(char* name, char* last_name)
