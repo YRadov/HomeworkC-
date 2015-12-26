@@ -146,8 +146,8 @@ void main()
 //                   4  Класс Student
 //*********************************************************************	
 	Student student;
-	//cout << "Not initialized student:\n";
-	//ShowAdress(student);//валится прога????????????????????????
+	cout << "Not initialized student:\n"<< "-------------------\n";;
+	ShowAdress(student);
 	cout << "\n********************************************\n";
 
 	student.SetName("Yurii");
@@ -160,42 +160,39 @@ void main()
 	/**
 	*Проверка класса Adress
 	*/
-	//Adress adress;// валится прога??????????????????????????????????????
-	//Adress adress("Odessa", "Vysotzky", 3, 21);
-	//cout << adress.GetCity() << endl;
-	//cout << adress.GetStreet() << endl;
-	//cout << adress.GetHouse() << endl;
-	//cout<<adress.GetRoom()<<endl;
-	//cout << "\n********************************************\n";
-
-	student.SetName("Petr");
-	student.SetLastName("Petrov");
-	student.SetPhone(332244);
-	student.SetAdress("Odessa", "Lenina", 1, 22);
-	cout << "The student with the changed data:\n" << "----------------------------------\n";
-	ShowAdress(student);
-	cout << "\n********************************************\n";
-	//char*name = "Ivan";
-	//char*lastname = "Ivanov";
-	//Student student2(name, lastname);//валится прога????????????????????
-	//cout << student2.GetLastName() << endl;
-	//cout << student2.GetName() << endl;
+	cout << "Check Adress" << "\n-------------------\n";
+	Adress adress;// валится прога??????????????????????????????????????
+	cout << adress.GetCity() << endl;
+	cout << adress.GetStreet() << endl;
+	cout << adress.GetHouse() << endl;
+	cout<<adress.GetRoom()<<endl;
+	cout << "\n--------------------------\n";
+	Adress adress2("Odessa", "Vysotzky", 3, 21);
+	cout << adress2.GetCity() << endl;
+	cout << adress2.GetStreet() << endl;
+	cout << adress2.GetHouse() << endl;
+	cout << adress2.GetRoom() << endl;
 	cout << "\n********************************************\n";
 
-	//Student student3 = student;//валится прога???????
-	Student student3;
+
+	Student student3 = student;//валится прога???????
+	cout << "Copy of student" << "\n-------------------\n";
+	ShowAdress(student3);
+	cout << "\n********************************************\n";
+
+	//Student student3("Petr","Petrov");
 	student3.SetName("Ivan");
 	student3.SetLastName("Ivanov");
 	student3.SetPhone(111111);
 	student3.SetAdress("Odessa", "Levitana", 1, 22);
-	cout << "The new student:\n" << "----------------------------------\n";
-	ShowAdress(student3);//валится прога???????
+	cout << "The new student:\n" << "-------------------\n";
+	ShowAdress(student3);
 	
 	//оценки за экзамены
-	student.SetExams(5);
-	student.SetExams(4);
-	student.SetExams(5);
-	student.ShowExams();
+	student3.SetExams(5);
+	student3.SetExams(4);
+	student3.SetExams(5);
+	student3.ShowExams();
 
 
 }//main
@@ -241,13 +238,14 @@ void Choice(int flag, Counter& a)
 void ShowAdress(Student& stud)
 {
 	//cout << "\n**********************************\n";
-		cout << stud.GetLastName() << " ";
-		cout << stud.GetName() << endl;
+		cout <<"LastName: "<< stud.GetLastName() << endl;
+		cout << "Name: " << stud.GetName() << endl;
 		cout << "Phone nomber: "<< stud.GetPhone() << endl;
 		cout << "City: " << stud.GetAdress().GetCity() << endl
 			<< "Street: " << stud.GetAdress().GetStreet() << endl
 			<< "House: " << stud.GetAdress().GetHouse() << endl
 			<< "Room: " << stud.GetAdress().GetRoom() << endl;
 	//cout << "\n**********************************\n";
-
 }
+//***************************************************
+

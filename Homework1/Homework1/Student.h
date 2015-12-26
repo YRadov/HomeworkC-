@@ -2,10 +2,10 @@
 #include "Adress.h"
 class Student
 {
-	char* name;
-	char* last_name;
+	char* name = nullptr;
+	char* last_name = nullptr;
 	int phone;
-	int* exams = nullptr;//new int[0];
+	int* exams = nullptr;
 	int size = 0;
 	Adress adress;
 
@@ -23,8 +23,8 @@ public:
 	int   GetPhone()const;
 	Adress GetAdress();
 
-	//Student();
-	Student():name(nullptr), last_name(nullptr), phone(0) {};
+	Student();
+	//Student():name(nullptr), last_name(nullptr), phone(0) {};
 	Student(char* name, char* last_name, int phone,Adress adress);
 	Student(char* name, char* last_name);
 
